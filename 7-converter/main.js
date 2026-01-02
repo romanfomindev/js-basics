@@ -1,16 +1,22 @@
 
 function converter(summa, currency, targetCurrency) {
-    coeff['RUB']['USD'] = 2.5
-    coeff['RUB']['EUR'] = 3.5
-    coeff['USD']['RUB'] = 0.8
-    coeff['USD']['EUR'] = 0.3
+    let coeff = {
+        RUB: {
+            USD: 2.5,
+            EUR: 3.5
+        },
+        USD: {
+            RUB: 0.8,
+            EUR: 0.3
+        },
+        EUR: {} // можно оставить пустым или заполнить позже
+    };
 
-    let с = coeff[currency][targetCurrency]
+    let c = coeff[currency][targetCurrency]
 
     if (c === undefined) {
         return null
     }
 
-    let c;
     return summa * c
 }
