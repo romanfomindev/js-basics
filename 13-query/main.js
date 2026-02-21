@@ -15,6 +15,6 @@ function objectToQueryString(params) {
     }
 
     // Объединяем параметры через & и добавляем ? в начале
-    return '?' + validParams.join('&');
+    return validParams.join('&');
 }
 
